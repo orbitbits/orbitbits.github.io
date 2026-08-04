@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+Created with Inkscape (http://www.inkscape.org/)
+  © 2026 William C. Canin
+  This artwork is protected by copyright.
+  Unauthorized use, copying, or modification is prohibited.
+-->
+
+<svg
+   width="270mm"
+   height="270mm"
+   viewBox="0 0 270 270"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="orbitbits-transparent-dark.svg"
+   inkscape:export-filename="orbitbits.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><title
+     id="title1">OrbitBits</title><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.25"
+     inkscape:cx="594"
+     inkscape:cy="304"
+     inkscape:window-width="1071"
+     inkscape:window-height="991"
+     inkscape:window-x="26"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" /><defs
+     id="defs1" /><g
+     inkscape:groupmode="layer"
+     id="g4"
+     inkscape:label="orbitbits-svg"
+     style="display:inline"><rect
+       style="display:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5.67497;stroke-linecap:round;paint-order:fill markers stroke"
+       id="rect1"
+       width="270"
+       height="270"
+       x="0"
+       y="0"
+       inkscape:label="ob-bg-light"
+       ry="0" /><rect
+       style="display:none;fill:#0d1117;fill-opacity:1;stroke:none;stroke-width:5.67497;stroke-linecap:round;paint-order:fill markers stroke"
+       id="rect1-36"
+       width="270"
+       height="270"
+       x="0"
+       y="0"
+       inkscape:label="ob-bg-dark"
+       ry="0" /><path
+       d="m 137.59586,62.334014 a 84.621076,85.764612 0 0 0 -85.656765,84.442326 84.621076,85.764612 0 0 0 83.060545,87.06611 84.621076,85.764612 0 0 0 86.15264,-83.92338 l 0.0153,-1.02249 A 84.621076,85.764612 0 0 0 137.59576,62.334014 Z m -0.70396,35.109714 a 48.81272,49.47236 0 0 1 48.20725,49.932142 l -0.006,0.59029 A 48.81272,49.47236 0 0 1 135.39531,196.37609 48.81272,49.47236 0 0 1 87.482845,146.15303 48.81272,49.47236 0 0 1 136.893,97.443728 Z"
+       style="display:inline;fill:#181818;fill-opacity:1;stroke:none;stroke-width:2.97098;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:1;stroke-opacity:1"
+       id="path1"
+       inkscape:label="ob-O-dark" /><path
+       d="m 134.99831,64.689887 a 77.035052,78.076073 0 0 0 -77.977897,76.872323 77.035052,78.076073 0 0 0 75.614417,79.2609 77.035052,78.076073 0 0 0 78.42932,-76.3999 l 0.0139,-0.93083 A 77.035052,78.076073 0 0 0 134.99823,64.689887 Z m -0.64085,31.962233 a 44.436807,45.037312 0 0 1 43.88561,45.45588 l -0.006,0.53737 A 44.436807,45.037312 0 0 1 132.99489,186.71549 44.436807,45.037312 0 0 1 89.377633,140.99478 44.436807,45.037312 0 0 1 134.35832,96.65212 Z"
+       style="display:none;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.70464;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:1;stroke-opacity:1"
+       id="path1-0"
+       inkscape:label="ob-O-light" /><path
+       d="m 259.0362,52.203175 c 1.18762,14.482437 -6.38369,22.286793 -24.79836,21.958844 -5.56012,15.790226 -34.36308,47.673531 -85.7069,69.903791 -47.62439,23.63704 -156.1004307,41.4241 -99.440958,-24.3961 0.07447,-0.0849 -53.8838352,38.81201 -47.582279,57.25565 7.8310385,22.9202 73.572053,15.74402 146.994947,-16.04579 73.42336,-31.79 126.84718,-76.20865 119.45362,-99.318454 l -0.16946,-0.495742 c -1.35691,-3.730146 -8.75061,-8.862199 -8.75061,-8.862199 z"
+       style="display:inline;fill:#26c7d9;stroke:#26c7d9;stroke-width:1.96985;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1;stroke-opacity:1"
+       id="path2-62"
+       sodipodi:nodetypes="ccccssccc"
+       inkscape:label="ob-ring" /><rect
+       style="display:inline;fill:#26c7d9;fill-opacity:1;stroke:#26c7d9;stroke-width:2.33697;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2-61"
+       width="24.670923"
+       height="25.724829"
+       x="225.31592"
+       y="38.029728"
+       ry="5.8113313"
+       inkscape:label="ob-bit-3" /><rect
+       style="display:inline;fill:#26c7d9;fill-opacity:1;stroke:#26c7d9;stroke-width:1.78661;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3-8"
+       width="18.860785"
+       height="19.666494"
+       x="199.10326"
+       y="42.76474"
+       ry="4.4427309"
+       inkscape:label="ob-bit-2" /><rect
+       style="display:inline;fill:#26c7d9;fill-opacity:1;stroke:#26c7d9;stroke-width:1.383;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:1;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4-7"
+       width="14.600022"
+       height="15.223714"
+       x="177.36057"
+       y="55.295212"
+       ry="3.4390912"
+       inkscape:label="ob-bit-1" /></g><metadata
+     id="metadata1"><rdf:RDF><cc:Work
+         rdf:about=""><dc:creator><cc:Agent><dc:title>William C. Canin</dc:title></cc:Agent></dc:creator><dc:rights><cc:Agent><dc:title>© 2026 William C. Canin. Unauthorized use prohibited.</dc:title></cc:Agent></dc:rights><dc:publisher><cc:Agent><dc:title>William C. Canin</dc:title></cc:Agent></dc:publisher><dc:title>OrbitBits</dc:title></cc:Work></rdf:RDF></metadata></svg>

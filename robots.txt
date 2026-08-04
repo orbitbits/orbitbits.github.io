@@ -1,0 +1,12 @@
+User-agent: *
+
+# Block system files and licenses
+Disallow: /LICENSE
+Disallow: /README.txt
+Disallow: /CNAME
+
+# Block assets that do not need to be indexed individually.
+Disallow: /assets/vendors/
+
+# Change the URL to your website's sitemap.xml.
+Sitemap: https://orbitbits.com/sitemap.xml

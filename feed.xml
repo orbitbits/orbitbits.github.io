@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://orbitbits.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://orbitbits.com/" rel="alternate" type="text/html" /><updated>2026-08-04T02:58:24+00:00</updated><id>https://orbitbits.com/feed.xml</id><title type="html">OrbitBits</title><subtitle>Everything revolves around your workflow.</subtitle><entry><title type="html">SeedCTL 0.2.4 — Cold Signing, macOS Support, and GPLv3 License</title><link href="https://orbitbits.com/blog/seedctl-version-024-and-new-features/" rel="alternate" type="text/html" title="SeedCTL 0.2.4 — Cold Signing, macOS Support, and GPLv3 License" /><published>2026-07-29T18:49:47+00:00</published><updated>2026-07-29T18:49:47+00:00</updated><id>https://orbitbits.com/blog/seedctl-version-024-and-new-features</id><content type="html" xml:base="https://orbitbits.com/blog/seedctl-version-024-and-new-features/"><![CDATA[<p>SeedCTL 0.2.4 is now available, bringing several significant updates that expand its capabilities beyond seed generation into offline transaction signing, platform support, and licensing alignment.</p>
+
+<h2 id="cold-signing-offline-transaction-signing">Cold Signing (Offline Transaction Signing)</h2>
+
+<p>The headline feature in this release is <strong>cold signing</strong> — the ability to sign transactions on an air-gapped machine without exposing the private key to a networked environment.</p>
+
+<h3 id="evm-ethereum-bsc-polygon-etc">EVM (Ethereum, BSC, Polygon, etc.)</h3>
+
+<p>SeedCTL now supports signing raw unsigned transaction hexes for any EVM-compatible chain using the <code class="language-plaintext highlighter-rouge">alloy</code> crate. The flow is straightforward:</p>
+
+<ol>
+  <li>Obtain the unsigned transaction hex from a watch-only wallet (e.g., Rabby, MetaMask).</li>
+  <li>SeedCTL derives the private key from the seed.</li>
+  <li>The private key signs the hex using the specified chain ID (e.g., <code class="language-plaintext highlighter-rouge">1</code> for Ethereum, <code class="language-plaintext highlighter-rouge">56</code> for BSC).</li>
+  <li>SeedCTL outputs the signed transaction hex, ready to be broadcast.</li>
+</ol>
+
+<p>This enables a fully offline signing workflow: build and review the transaction on a connected machine, transfer the unsigned hex to the air-gapped machine via USB, sign with SeedCTL, and take the signed hex back to broadcast.</p>
+
+<h3 id="bitcoin-psbt--bip-174">Bitcoin (PSBT / BIP-174)</h3>
+
+<p>For Bitcoin, SeedCTL adopts the <strong>PSBT (Partially Signed Bitcoin Transaction)</strong> standard defined in <a href="https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki">BIP-174</a>. This is the same protocol used by hardware wallets like Ledger and Trezor, and works seamlessly with Electrum.</p>
+
+<p>The flow:</p>
+
+<ol>
+  <li>The online wallet (e.g., Electrum) creates a <code class="language-plaintext highlighter-rouge">.psbt</code> file.</li>
+  <li>Transfer the file to the air-gapped machine.</li>
+  <li>SeedCTL reads the PSBT, applies the signature using the derived private key, and outputs a fully signed PSBT.</li>
+  <li>Take the signed PSBT back to the online wallet to broadcast.</li>
+</ol>
+
+<p>This makes SeedCTL a viable alternative to hardware wallets for offline signing workflows.</p>
+
+<h2 id="macos-installer">macOS Installer</h2>
+
+<p>SeedCTL now ships with an official macOS installer script, alongside the existing Linux and Windows options:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install</span>
+bash &lt;<span class="o">(</span>curl <span class="nt">-fsSL</span> https://orbitbits.com/seedctl/macos.sh<span class="o">)</span>
+
+<span class="c"># Uninstall</span>
+bash &lt;<span class="o">(</span>curl <span class="nt">-fsSL</span> https://orbitbits.com/seedctl/macos.sh<span class="o">)</span> <span class="nt">--uninstall</span>
+</code></pre></div></div>
+
+<p>This addition brings SeedCTL to all three major desktop platforms, making it accessible to a wider range of operators.</p>
+
+<h2 id="gplv3-license">GPLv3 License</h2>
+
+<p>The project has been relicensed under <strong>GPLv3</strong>, reinforcing SeedCTL’s commitment to software freedom and ensuring that all modifications and distributed versions remain open source.</p>
+
+<h2 id="additional-improvements">Additional Improvements</h2>
+
+<ul>
+  <li><strong>Harden offline signing</strong> — Improved terminal handling and signature validation for cold signing workflows.</li>
+  <li><strong>Workspace credits</strong> — The CLI now displays workspace credits in help output for better attribution.</li>
+  <li><strong>Cross-platform release builds</strong> — CI now produces release assets for Linux, macOS, and Windows simultaneously.</li>
+  <li><strong>Align dependency versions</strong> — Workspace dependencies have been synchronized across the project for consistent builds.</li>
+  <li><strong>Updated branding</strong> — The project logotype has been refreshed.</li>
+</ul>
+
+<h2 id="release-archive">Release Archive</h2>
+
+<p>Download the latest binaries and checksums from the <a href="https://github.com/orbitbits/seedctl/releases">official releases page</a>.</p>]]></content><author><name>William C. Canin</name></author><category term="seedctl" /><category term="cold-signing" /><category term="offline-transaction" /><category term="psbt" /><category term="evm" /><category term="macos" /><summary type="html"><![CDATA[SeedCTL 0.2.4 introduces offline cold signing for EVM and Bitcoin (PSBT), a macOS installer, and a relicense to GPLv3 — expanding its role as a secure, air-gapped wallet tool.]]></summary></entry><entry><title type="html">SeedCTL is now available!</title><link href="https://orbitbits.com/blog/seedctl-is-now-available/" rel="alternate" type="text/html" title="SeedCTL is now available!" /><published>2026-05-20T16:49:47+00:00</published><updated>2026-05-20T16:49:47+00:00</updated><id>https://orbitbits.com/blog/seedctl-is-now-available</id><content type="html" xml:base="https://orbitbits.com/blog/seedctl-is-now-available/"><![CDATA[<p>Wallet generation should never feel like a magic button.</p>
+
+<p>SeedCTL is now available as a focused command-line tool for generating multichain cryptocurrency wallets with a workflow you can inspect, repeat, and trust more deliberately. It is built for people who want control over the important parts of wallet creation: where entropy comes from, how a mnemonic is produced or reused, which passphrase is involved, which derivation path is selected, and which network or account range is being generated.</p>
+
+<p>Modern crypto tooling often hides those decisions behind friendly screens. That can be convenient, but it also makes serious operational work harder to verify. SeedCTL takes the opposite approach. It is designed for clear, reproducible execution, especially in offline or air-gapped environments where the machine doing sensitive work should not need network access.</p>
+
+<p>The first release focuses on practical, inspectable wallet generation. SeedCTL currently supports dice-based entropy, making it possible to build a mnemonic from a physical random process that can be performed and reviewed outside the tool itself. From there, SeedCTL helps derive addresses across supported chains and standards, giving builders, auditors, long-term holders, and recovery operators a more controlled way to work with wallet material.</p>
+
+<p>SeedCTL is not trying to be a trading app, a browser wallet, or a place to manage balances. It is intentionally narrower than that. Its job is to help you create and verify wallet outputs in a way that fits careful procedures: backup ceremonies, recovery planning, reproducible address derivation, cold storage preparation, and internal security workflows where every input should be known.</p>
+
+<p>That focus matters. A seed phrase is one of the most sensitive pieces of information a person or organization can handle. SeedCTL is built around the idea that sensitive wallet operations should be quiet, local, and understandable. It does not need to transmit data, it is suitable for offline use, and it avoids turning key material into a background side effect of some larger application.</p>
+
+<p>If your current wallet generation process feels too opaque, too hard to repeat, or too dependent on a single graphical tool, SeedCTL gives you a cleaner path: explicit inputs, deterministic outputs, and a CLI workflow that can become part of a real operational standard.</p>
+
+<p>Use it carefully, verify outputs before funding addresses, and run sensitive workflows only in trusted offline environments. That is exactly the kind of discipline SeedCTL was made to support.</p>
+
+<p><a href="/seedctl/#install" class="orbitbits-btn orbitbits-btn--dark">Install SeedCTL</a>
+<a href="/seedctl/" class="orbitbits-btn orbitbits-btn--dark-outline">Explore SeedCTL</a></p>]]></content><author><name>William C. Canin</name></author><category term="CLI" /><category term="bitcoin" /><category term="bip39" /><category term="cryptocurrency" /><category term="mnemonic-phrase" /><category term="crypto" /><category term="ethereum" /><category term="bip84" /><category term="wallet" /><summary type="html"><![CDATA[Cryptocurrency multichain wallet generator (currently supports dice-based 🎲 entropy).]]></summary></entry><entry><title type="html">Tildr is now available!</title><link href="https://orbitbits.com/blog/tildr-is-now-available/" rel="alternate" type="text/html" title="Tildr is now available!" /><published>2026-04-28T20:05:42+00:00</published><updated>2026-04-28T20:05:42+00:00</updated><id>https://orbitbits.com/blog/tildr-is-now-available</id><content type="html" xml:base="https://orbitbits.com/blog/tildr-is-now-available/"><![CDATA[<p>Your home directory is not just a folder.</p>
+
+<p>It is your shell, your editor, your aliases, your Git identity, your terminal habits, your small scripts, your machine-specific tweaks, and all the tiny decisions that make a computer feel like yours.</p>
+
+<p>And if you have ever moved to a new machine, reinstalled a system, or tried to reproduce your setup after months of small changes, you already know the problem: your <code class="language-plaintext highlighter-rouge">$HOME</code> slowly becomes a living thing that is hard to explain, hard to copy, and easy to lose.</p>
+
+<p><strong>Tildr is now available to make that state intentional.</strong></p>
+
+<p>Tildr is a fast Rust CLI for managing your home directory declaratively. It helps you turn the important parts of <code class="language-plaintext highlighter-rouge">$HOME</code> into a repository-backed setup that can be inspected, versioned, synchronized, and applied again when you need it.</p>
+
+<p>Not as a messy pile of copied files.
+Not as a private ritual you have to remember from scratch.</p>
+
+<p>As a reproducible home state.</p>
+
+<h2 id="why-tildr-exists">Why Tildr exists</h2>
+
+<p>Dotfiles are personal infrastructure.</p>
+
+<p>They decide how fast your terminal opens, how your editor behaves, how your shell completes commands, how your Git commits are signed, how your prompts look, and how your tools talk to each other. But most of us still manage that infrastructure with a mix of manual copies, half-finished scripts, old notes, and “I will clean this up later” folders.</p>
+
+<p>Tildr starts from a different idea:</p>
+
+<p><strong>Your home directory should have a source of truth.</strong></p>
+
+<p>With Tildr, the files you choose to manage live in a repository inside your home directory. Your active <code class="language-plaintext highlighter-rouge">$HOME</code> receives symlinks pointing back to that repository. That means your real configuration stays organized, versionable, and portable, while your system continues to see files exactly where it expects them.</p>
+
+<p>You keep the native Unix model.
+You gain a controlled workflow around it.</p>
+
+<h2 id="built-for-people-who-actually-live-in-the-terminal">Built for people who actually live in the terminal</h2>
+
+<p>Tildr is designed for daily use, not just initial setup.</p>
+
+<p>It is the kind of tool you can keep close while your environment evolves: add a config file when it becomes important, check what is managed, repair symlinks after changes, sync the repository, and keep moving. The goal is not to make your workflow feel abstract. The goal is to make it feel predictable.</p>
+
+<p>That matters when you are managing things like:</p>
+
+<ul>
+  <li>shell profiles and aliases</li>
+  <li>editor configuration</li>
+  <li>terminal and prompt settings</li>
+  <li>Git configuration</li>
+  <li>SSH-related workflows</li>
+  <li>scripts and small utilities</li>
+  <li>machine-specific setup patterns</li>
+  <li>sensitive files that need more deliberate handling</li>
+</ul>
+
+<p>Tildr is especially useful if you use more than one machine, reinstall often, care about reproducibility, or simply want your setup to stop depending on memory and luck.</p>
+
+<h2 id="what-makes-it-useful">What makes it useful</h2>
+
+<p>Tildr focuses on the practical details that make a dotfile manager become your default instead of another experiment.</p>
+
+<p><strong>Repository-backed state</strong></p>
+
+<p>Your managed files live in a real repository. You can inspect it, commit it, review changes, push it, clone it, back it up, and understand what is happening.</p>
+
+<p><strong>Symlink-based application</strong></p>
+
+<p>Tildr keeps your files available at their normal paths in <code class="language-plaintext highlighter-rouge">$HOME</code> through symlinks. Tools do not need to know anything special. Your shell, editor, terminal, and Git keep working as expected.</p>
+
+<p><strong>Fast native CLI</strong></p>
+
+<p>Tildr is written in Rust, so it feels quick and direct. It is built to be a small operational tool you can run often without ceremony.</p>
+
+<p><strong>Git-friendly workflow</strong></p>
+
+<p>Your setup becomes easier to version and synchronize. Instead of wondering which machine has the newest copy of <code class="language-plaintext highlighter-rouge">.zshrc</code> or <code class="language-plaintext highlighter-rouge">nvim</code>, you can treat your environment like a project.</p>
+
+<p><strong>Visibility when things drift</strong></p>
+
+<p>A reproducible setup is only useful if you can see when it is no longer clean. Tildr gives you a way to inspect managed files, missing links, broken links, and state that needs attention.</p>
+
+<p><strong>Designed for Linux and macOS</strong></p>
+
+<p>If your workflow moves between Unix-like environments, Tildr is shaped for that world: <code class="language-plaintext highlighter-rouge">$HOME</code>, symlinks, Git, shell tooling, and terminal-first habits.</p>
+
+<h2 id="a-better-default-for-dotfiles">A better default for dotfiles</h2>
+
+<p>The best dotfile manager is not the one with the most magic.</p>
+
+<p>It is the one you trust enough to use every day.</p>
+
+<p>Tildr is intentionally built around explicit behavior. It does not ask you to surrender your home directory to an opaque system. It gives you a repository, a clear model, and commands that make the lifecycle of your files easier to control.</p>
+
+<p>That makes it a strong default if you want:</p>
+
+<ul>
+  <li>a clean way to collect your important configuration</li>
+  <li>a reproducible setup for fresh machines</li>
+  <li>less manual copying between systems</li>
+  <li>a Git-backed history of your environment</li>
+  <li>a workflow that stays close to normal Unix behavior</li>
+  <li>confidence that your dotfiles are not scattered everywhere</li>
+</ul>
+
+<p>Once Tildr is part of your workflow, setting up a new machine becomes less like archaeology and more like applying a known state.</p>
+
+<h2 id="for-fresh-installs-new-machines-and-future-you">For fresh installs, new machines, and future you</h2>
+
+<p>There is a particular kind of frustration that only appears when you are setting up a machine and realize your “real” configuration was never written down.</p>
+
+<p>The missing alias.
+The editor plugin you forgot.
+The Git behavior that feels slightly wrong.
+The terminal setting you know you changed somewhere.
+The shell file that exists on one laptop but not another.</p>
+
+<p>Tildr is built for that moment.</p>
+
+<p>It gives future you a place to look and a workflow to repeat. Your environment can become something you carry forward instead of something you reconstruct by instinct.</p>
+
+<h2 id="start-with-the-files-that-matter">Start with the files that matter</h2>
+
+<p>You do not need to migrate your whole home directory in one dramatic afternoon.</p>
+
+<p>Start with the files you touch most. Your shell config. Your Git config. Your editor config. Your terminal settings. The things that make a new machine feel immediately usable.</p>
+
+<p>Then let your Tildr repository grow as your workflow grows.</p>
+
+<p>Small, inspectable, deliberate steps are the point.</p>
+
+<h2 id="tildr-is-available-now">Tildr is available now</h2>
+
+<p>Tildr is now available as part of the OrbitBits toolchain.</p>
+
+<p>If your dotfiles are still spread across machines, copied by hand, or trapped in old setup scripts, this is a good moment to give them a proper home.</p>
+
+<p>Make your <code class="language-plaintext highlighter-rouge">$HOME</code> declarative.
+Make it reproducible.
+Make it yours, on purpose.</p>
+
+<p><a href="/tildr/#install" class="orbitbits-btn orbitbits-btn--dark">Install Tildr</a>
+<a href="/tildr/" class="orbitbits-btn orbitbits-btn--dark-outline">Explore Tildr</a></p>]]></content><author><name>William C. Canin</name></author><category term="CLI" /><category term="dotfiles" /><category term="linux" /><category term="macos" /><category term="symlinks" /><summary type="html"><![CDATA[Manage and reproduce your HOME directory declaratively.]]></summary></entry><entry><title type="html">Smog is now available!</title><link href="https://orbitbits.com/blog/smog-is-now-available/" rel="alternate" type="text/html" title="Smog is now available!" /><published>2026-04-26T22:27:05+00:00</published><updated>2026-04-26T22:27:05+00:00</updated><id>https://orbitbits.com/blog/smog-is-now-available</id><content type="html" xml:base="https://orbitbits.com/blog/smog-is-now-available/"><![CDATA[<p>Deleting a file is not the same thing as making it disappear.</p>
+
+<p>Most systems are very good at removing references. A file vanishes from the folder, the trash looks empty, and the interface tells you the job is done. But underneath that familiar gesture, recoverable traces can still remain on disk, in free space, in old blocks, or inside storage surfaces you no longer think about.</p>
+
+<p><strong>Smog is now available to help you deal with that problem directly.</strong></p>
+
+<p>Smog is a fast Rust CLI for controlled data sanitization. It is designed for moments when ordinary deletion is not enough and you want an explicit, operator-driven way to turn sensitive data into unreadable noise.</p>
+
+<p>It does not pretend that deletion is privacy.
+It treats destruction as an intentional workflow.</p>
+
+<h2 id="why-smog-exists">Why Smog exists</h2>
+
+<p>Sensitive data has a habit of outliving its usefulness.</p>
+
+<p>Temporary exports. Wallet files. Private notes. Old credentials. Build artifacts. Client material. Logs. Archives. Test data. Things copied to a USB drive “just for a minute” and forgotten until the next cleanup.</p>
+
+<p>The problem is not only that these files exist. The problem is that removing them casually can create a false sense of security.</p>
+
+<p>Smog exists for people who want a sharper tool for those moments: a CLI that targets files, folders, trash, free space, and storage devices with deliberate overwrite behavior instead of relying on the default delete path.</p>
+
+<p>It is built for operators who prefer explicit actions, visible progress, and tools that say what they are doing.</p>
+
+<h2 id="what-smog-does-differently">What Smog does differently</h2>
+
+<p>Smog is not a prettier trash button.</p>
+
+<p>It is a data sanitization utility designed to overwrite information so what remains is no longer useful as information. The result is digital fog: a surface where the original structure is replaced by noise.</p>
+
+<p>That makes Smog useful when you need to clean up data that should not be recoverable through ordinary means.</p>
+
+<p>With Smog, you can think about deletion as a controlled operation:</p>
+
+<ul>
+  <li>choose the target</li>
+  <li>choose the level of effort</li>
+  <li>observe the process</li>
+  <li>remove sensitive material with intent</li>
+</ul>
+
+<p>That difference matters. It turns “I deleted it” into “I deliberately sanitized it.”</p>
+
+<h2 id="built-for-security-minded-workflows">Built for security-minded workflows</h2>
+
+<p>Smog is especially useful if you work close to sensitive material: security research, crypto workflows, private documents, infrastructure files, development artifacts, or any environment where old data should not linger longer than necessary.</p>
+
+<p>It is designed for practical scenarios like:</p>
+
+<ul>
+  <li>destroying individual sensitive files</li>
+  <li>sanitizing entire directory trees</li>
+  <li>clearing trash content more deliberately</li>
+  <li>reducing traces from previously deleted material</li>
+  <li>handling removable drives before reuse or disposal</li>
+  <li>building cleanup routines around explicit targets</li>
+</ul>
+
+<p>The point is not drama. The point is control.</p>
+
+<p>When a file matters enough to protect, its removal should also be intentional.</p>
+
+<h2 id="a-cli-that-stays-close-to-the-operator">A CLI that stays close to the operator</h2>
+
+<p>Smog is terminal-first because sensitive cleanup often belongs in scripts, operational checklists, and repeatable workflows.</p>
+
+<p>You can use it manually when you need to destroy something right now, or integrate it into habits around exports, temporary folders, removable devices, and cleanup after sensitive tasks.</p>
+
+<p>It gives you a workflow that feels direct:</p>
+
+<p><strong>Target the data. Run the operation. Watch it complete. Move on.</strong></p>
+
+<p>That makes Smog a good fit for people who already trust the command line as the place where serious work happens.</p>
+
+<h2 id="why-rust-matters-here">Why Rust matters here</h2>
+
+<p>Smog is built in Rust because this kind of tool should feel fast, predictable, and native.</p>
+
+<p>Data destruction should not feel like a fragile script pasted together from old shell snippets. Smog is packaged as a focused binary with a clear job: take explicit targets and perform controlled sanitization work with visible feedback.</p>
+
+<p>That gives you a tool you can keep around for real operational use, not just a one-off command you have to rediscover every time something sensitive needs to be removed.</p>
+
+<h2 id="more-than-files">More than files</h2>
+
+<p>Smog is shaped for different cleanup surfaces.</p>
+
+<p>Files and directories are the obvious targets, but sensitive traces do not always stay neatly inside the current file tree. Deleted data can leave remnants in free space. Removable media may need deliberate handling. Trash directories can become a quiet pile of things that were “deleted” but never truly treated as sensitive.</p>
+
+<p>Smog gives those cases a single mental model:</p>
+
+<p><strong>If the data should no longer be readable, push it into noise.</strong></p>
+
+<p>That does not remove the need for judgment. Storage hardware, SSD behavior, filesystem details, backups, snapshots, and cloud sync can all affect what “gone” really means. But Smog gives you a stronger local sanitization workflow than standard deletion and keeps that workflow explicit.</p>
+
+<h2 id="for-the-cleanup-you-should-not-postpone">For the cleanup you should not postpone</h2>
+
+<p>Every technical person has a graveyard of old files.</p>
+
+<p>The archive that should have been removed.
+The copied key that was only meant to exist temporarily.
+The database dump from a test.
+The document exported for a quick transfer.
+The folder you keep meaning to review before deleting.</p>
+
+<p>Smog is for the moment when you stop postponing that cleanup.</p>
+
+<p>It helps you remove sensitive material with the seriousness it deserves, without turning the process into ceremony.</p>
+
+<h2 id="a-better-default-for-sensitive-deletion">A better default for sensitive deletion</h2>
+
+<p>Smog is not meant to replace every normal delete operation. You do not need a data sanitization tool for every cache file or harmless download.</p>
+
+<p>But when the data matters, Smog is the better default.</p>
+
+<p>Use it when the question is not “Can I hide this from the file manager?” but “Can I reduce the chance that this information remains recoverable?”</p>
+
+<p>That shift is the whole point.</p>
+
+<h2 id="smog-is-available-now">Smog is available now</h2>
+
+<p>Smog is now available as part of the OrbitBits toolchain.</p>
+
+<p>If your cleanup process still depends on ordinary deletion for sensitive material, this is a good time to add a stronger tool to your workflow.</p>
+
+<p>Turn data into unreadable noise.
+Make sensitive removal intentional.
+Let old traces disappear into the fog.</p>
+
+<p><a href="/smog/#install" class="orbitbits-btn orbitbits-btn--dark">Install Smog</a>
+<a href="/smog/" class="orbitbits-btn orbitbits-btn--dark-outline">Explore Smog</a></p>]]></content><author><name>William C. Canin</name></author><category term="CLI" /><category term="data-destruction" /><category term="data-sanitization" /><category term="file-shredder" /><category term="linux" /><category term="secure-delete" /><category term="security" /><summary type="html"><![CDATA[Turn data into unreadable noise.]]></summary></entry></feed>

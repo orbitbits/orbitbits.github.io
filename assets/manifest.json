@@ -1,0 +1,21 @@
+{
+  "name": "orbitbits",
+  "short_name": "orbitbits",
+  "description": "Everything revolves around your workflow.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "lang": "en-US",
+  "categories": ["productivity", "utilities", "CLI"],
+  "icons": [
+    {
+      "src": "/assets/images/orbitbits-dark.png",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
